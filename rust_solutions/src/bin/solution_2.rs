@@ -1,9 +1,9 @@
 fn main() {
-    let mut result: u64 = 0;
-
     // Part 1:
     std::fs::read_to_string("input2.txt")
         .map(|input| {
+            let mut result: u64 = 0;
+
             input.split(',').for_each(|id| {
                 if let Some((f, l)) = id.trim().split_once('-') {
                     let start: u64 = f.parse().unwrap();
@@ -18,16 +18,17 @@ fn main() {
                         }
                     }
                 }
-            })
+            });
+
+            println!("Part 1: {:?}", result);
         })
         .unwrap();
-
-    println!("Part 1: {:?}", result);
-    result = 0;
 
     // Part 2:
     std::fs::read_to_string("input2.txt")
         .map(|input| {
+            let mut result: u64 = 0;
+
             input.split(',').for_each(|id| {
                 if let Some((f, l)) = id.trim().split_once('-') {
                     let start: u64 = f.parse().unwrap();
@@ -45,9 +46,9 @@ fn main() {
                         }
                     }
                 }
-            })
+            });
+
+            println!("Part 2: {:?}", result);
         })
         .unwrap();
-
-    println!("Part 2: {:?}", result);
 }
